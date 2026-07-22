@@ -1,0 +1,27 @@
+html, body, #root { margin: 0; padding: 0; height: 100%; }
+@keyframes pulse{ 0%{r:16; opacity:1;} 70%{r:24; opacity:0.15;} 100%{r:16; opacity:1;} }
+@keyframes pop{ 0%{transform:scale(0.2);} 70%{transform:scale(1.15);} 100%{transform:scale(1);} }
+@keyframes hop{ 0%{transform:translateY(0) scale(0.85);} 45%{transform:translateY(-14px) scale(1.05);} 100%{transform:translateY(0) scale(1);} }
+@keyframes previewPulse{ 0%{opacity:0.9; stroke-width:4;} 70%{opacity:0.25; stroke-width:7;} 100%{opacity:0.9; stroke-width:4;} }
+@keyframes throwPopup{
+  0%{ transform:scale(0.4); opacity:0; }
+  12%{ transform:scale(1.14); opacity:1; }
+  20%{ transform:scale(1); opacity:1; }
+  80%{ transform:scale(1); opacity:1; }
+  100%{ transform:scale(0.92); opacity:0; }
+}
+.throw-popup{ animation: throwPopup 2.4s cubic-bezier(.22,.9,.32,1) forwards; }
+
+.action-btn{
+  display:inline-flex; align-items:center; gap:7px;
+  padding:9px 16px; border-radius:9999px;
+  border:2px solid #2a4468; background:#152740; color:#fff6e6;
+  font-family:'Baloo 2', sans-serif; font-weight:700; font-size:0.82rem;
+  letter-spacing:0.02em; cursor:pointer; white-space:nowrap;
+  box-shadow:0 3px 0 rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.action-btn:hover{ transform:translateY(-2px); border-color:#ffb84d; box-shadow:0 5px 0 rgba(0,0,0,0.3); }
+.action-btn:active{ transform:translateY(0); box-shadow:0 2px 0 rgba(0,0,0,0.3); }
+.action-btn--primary{ background:linear-gradient(135deg, #ffb84d, #dc8c22); border-color:#b3701f; color:#2b1400; }
+.action-btn--primary:hover{ border-color:#fff2c8; }
